@@ -11,7 +11,7 @@ object Api extends ConsoleLogged {
       val expecting = for {
         key <- lookup("key") is required(Valid.Required) is
           nonempty(Valid.Present) 
-        circle <- lookup("circle") is required(Valid.Required) is
+        circle <- lookup("ring") is required(Valid.Required) is
           nonempty(Valid.Present)
       } yield {
         log.info("Someone wanted to sign the following key in circle %s:\n %s" format(
