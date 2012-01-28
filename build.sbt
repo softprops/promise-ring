@@ -16,7 +16,14 @@ libraryDependencies ++= Seq(
   "net.databinder" %% "unfiltered-netty-server" % "0.5.3",
   "net.databinder" %% "dispatch-http" % "0.8.7",
   "com.codahale" %% "jerkson" % "0.5.0",
-  "org.bouncycastle" % "bcpg-jdk16" % "1.46"
+  "org.bouncycastle" % "bcpg-jdk16" % "1.46",
+  "com.jsuereth" %% "gpg-library" % "0.5"
 )
 
 resolvers += "coda" at "http://repo.codahale.com"
+
+resolvers += Resolver.url(
+  "sbt-plugin-releases",
+  new URL("http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/")
+)(Resolver.ivyStylePatterns)
+
