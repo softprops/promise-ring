@@ -6,6 +6,8 @@
 @font-size: 24px;
 @default-font-family:helvetica, arial, sans-serif;
 @input-font-family:monaco, monospace;
+@btn-grad-top: #66efff;
+@btn-grad-bot: #25DBFF;
 
 html, body, div, span, applet, object, iframe,html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
 
@@ -57,15 +59,21 @@ html, body, div, span, applet, object, iframe,html,body,div,span,applet,object,i
   background-clip: padding-box;
 }
 
+
 .btn {
   .rounded;
   .clipped;
-  .gradient(#66efff,#25DBFF);
+  .gradient(@btn-grad-top,@btn-grad-bot);
   font-size:24px;
   padding:.15em .25em;
   color:#fff;
   text-shadow:0 1px #g30A7DF;
   border:1px solid #25DBFF;
+  margin:.25em 0;
+}
+
+.btn:hover {
+  .gradient(darken(@btn-grad-top, 10%), darken(@btn-grad-bot, 10%));
 }
 
 * {
