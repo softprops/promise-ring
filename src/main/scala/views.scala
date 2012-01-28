@@ -49,7 +49,11 @@ object Views {
         <img class="medium-avatar left" src={ user.img }/>
         <div class="meta left">
           { "Hi %s." format user.login }
-          <div class="actions"><a href="/gh/disconnect">pull out</a></div>
+          <div class="actions">
+            <form action="/gh/disconnect" method="POST">
+              <input type="submit" class="btn" value="Pull out"/>
+            </form>
+          </div>
         </div>
       </div>
       <div>
@@ -58,7 +62,7 @@ object Views {
         </p>
         <div>
           <form action="/rings" method="POST" class="clearfix">
-            <input type="hidden" name="rings" value="scala"/>
+            <input type="hidden" name="ring" value="scala"/>
             <textarea class="key" name="key"/>
             <input type="submit" class="btn right" value="Upload Key"/>
           </form>
